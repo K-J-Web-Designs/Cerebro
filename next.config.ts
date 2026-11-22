@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
+  images: {
+    unoptimized: true,
+  },
   serverExternalPackages: ["@electric-sql/pglite", "linkedom", "postgres"],
   async headers() {
     return [

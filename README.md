@@ -37,6 +37,21 @@
    ```
    Open [http://localhost:3000](http://localhost:3000) and sign in with your existing Supabase account (Email/Password, Magic Link, or OAuth). Without Supabase env vars, Cerebro runs in local preview mode backed by embedded PGlite.
 
+## Deploying on Cybertron (Docker Compose + Cloudflare)
+
+1. On **Cybertron**, clone the repo and create `.env` (never committed to Git):
+   ```bash
+   git clone https://github.com/K-J-Web-Designs/Cerebro.git
+   cd Cerebro
+   cp .env.example .env
+   # Fill in NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY, DATABASE_URL, GOOGLE_GENERATIVE_AI_API_KEY
+   ```
+2. Start the production container:
+   ```bash
+   docker compose up -d --build
+   ```
+3. Point your **Cloudflare Tunnel** (or reverse proxy) at `http://localhost:3000`, verify `/api/health`, and add `https://your-domain.com/auth/callback` to **Supabase → Authentication → URL Configuration → Redirect URLs**.
+
 ## Verification Scripts
 
 ```bash
