@@ -1,0 +1,303 @@
+:root {
+  /* Luminous Scholarly Atelier — Light Palette */
+  --bg-canvas: #f6f3ec;
+  --bg-surface: #fcfaf5;
+  --bg-elevated: #ffffff;
+  --bg-muted: #ece7dc;
+  --bg-hover: #e5dfd1;
+
+  --text-primary: #1c1915;
+  --text-secondary: #544e44;
+  --text-muted: #7a7366;
+
+  --border-subtle: #e0d9cc;
+  --border-strong: #c8bfae;
+
+  --accent-amber: #b86e14;
+  --accent-amber-soft: #f5e6cc;
+  --accent-teal: #216869;
+  --accent-teal-soft: #dceceb;
+  --accent-sage: #2f6f4e;
+  --accent-sage-soft: #deede4;
+  --accent-terra: #9e473b;
+  --accent-terra-soft: #f3e1de;
+
+  --shadow-sm: 0 1px 2px rgba(28, 25, 21, 0.05);
+  --shadow-md: 0 8px 24px rgba(28, 25, 21, 0.08);
+  --shadow-lg: 0 18px 42px rgba(28, 25, 21, 0.12);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+html[data-theme="dark"] {
+  --bg-canvas: #141311;
+  --bg-surface: #1b1916;
+  --bg-elevated: #23201c;
+  --bg-muted: #292520;
+  --bg-hover: #322e28;
+
+  --text-primary: #f2ede3;
+  --text-secondary: #b9b1a3;
+  --text-muted: #8a8275;
+
+  --border-subtle: #2e2a24;
+  --border-strong: #443e36;
+
+  --accent-amber: #e29d42;
+  --accent-amber-soft: rgba(226, 157, 66, 0.15);
+  --accent-teal: #58a6a6;
+  --accent-teal-soft: rgba(88, 166, 166, 0.14);
+  --accent-sage: #5ea37c;
+  --accent-sage-soft: rgba(94, 163, 124, 0.14);
+  --accent-terra: #d4786a;
+  --accent-terra-soft: rgba(212, 120, 106, 0.14);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.36);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+  letter-spacing: -0.015em;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+/* Shared button & form primitives */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.52rem 0.95rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 140ms ease, border-color 140ms ease, transform 120ms ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent-amber);
+  border-color: var(--accent-amber);
+  color: #fffdf8;
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(0.94);
+  background: var(--accent-amber);
+  border-color: var(--accent-amber);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--bg-muted);
+  border-color: transparent;
+}
+
+.btn-sm {
+  padding: 0.34rem 0.68rem;
+  font-size: 0.8125rem;
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: 0.55rem 0.78rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--accent-amber);
+  box-shadow: 0 0 0 3px var(--accent-amber-soft);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.16rem 0.52rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-muted);
+  color: var(--text-secondary);
+}
+
+.badge-amber {
+  background: var(--accent-amber-soft);
+  border-color: transparent;
+  color: var(--accent-amber);
+}
+
+.badge-teal {
+  background: var(--accent-teal-soft);
+  border-color: transparent;
+  color: var(--accent-teal);
+}
+
+.badge-sage {
+  background: var(--accent-sage-soft);
+  border-color: transparent;
+  color: var(--accent-sage);
+}
+
+.badge-terra {
+  background: var(--accent-terra-soft);
+  border-color: transparent;
+  color: var(--accent-terra);
+}
+
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* TipTap editor styling */
+.cerebro-prose .tiptap {
+  outline: none;
+  min-height: 360px;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--text-primary);
+}
+
+.cerebro-prose .tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--text-muted);
+  pointer-events: none;
+  height: 0;
+}
+
+.cerebro-prose .tiptap h1,
+.cerebro-prose .tiptap h2,
+.cerebro-prose .tiptap h3 {
+  margin: 1.25rem 0 0.5rem;
+  line-height: 1.25;
+}
+
+.cerebro-prose .tiptap h1 {
+  font-size: 1.65rem;
+}
+
+.cerebro-prose .tiptap h2 {
+  font-size: 1.32rem;
+}
+
+.cerebro-prose .tiptap ul,
+.cerebro-prose .tiptap ol {
+  padding-left: 1.35rem;
+  margin: 0.5rem 0;
+}
+
+.cerebro-prose .tiptap ul[data-type="taskList"] {
+  list-style: none;
+  padding-left: 0.2rem;
+}
+
+.cerebro-prose .tiptap ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0.25rem 0;
+}
+
+.cerebro-prose .tiptap blockquote {
+  border-left: 3px solid var(--accent-amber);
+  padding-left: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0.75rem 0;
+}
+
+.cerebro-prose .tiptap code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85em;
+  background: var(--bg-muted);
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+}
+
+.cerebro-prose .tiptap pre {
+  background: var(--bg-muted);
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}

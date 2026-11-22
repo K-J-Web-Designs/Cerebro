@@ -1,0 +1,250 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+}
+
+.topBar {
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+}
+
+.topBar h1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.createRow {
+  display: flex;
+  gap: 0.55rem;
+  min-width: min(100%, 380px);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 1.1rem;
+  min-height: 580px;
+}
+
+.listPane {
+  padding: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stageChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.stageBtn,
+.stageActive {
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  padding: 0.2rem 0.52rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  color: var(--text-secondary);
+}
+
+.stageActive {
+  background: var(--accent-terra-soft);
+  border-color: var(--accent-terra);
+  color: var(--accent-terra);
+  font-weight: 600;
+}
+
+.ideaList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  overflow-y: auto;
+}
+
+.ideaItem,
+.ideaItemActive {
+  text-align: left;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0.7rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.ideaItem:hover {
+  background: var(--bg-muted);
+}
+
+.ideaItemActive {
+  background: var(--accent-terra-soft);
+  border-color: var(--accent-terra);
+}
+
+.ideaItemTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.ideaTitle {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.ideaStageMeta {
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.detailPane {
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detailHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.titleInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.iceBar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  background: var(--bg-muted);
+  border-radius: var(--radius-md);
+}
+
+.sliderLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.sliderLabel input[type="range"] {
+  accent-color: var(--accent-amber);
+}
+
+.iceScoreBox {
+  text-align: right;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.iceScoreBox span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.iceScoreBox strong {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--accent-amber);
+}
+
+.ideaTextarea {
+  line-height: 1.65;
+}
+
+.assistToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.relatedStrip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.suggestionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.suggestionCard {
+  padding: 0.8rem 0.95rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.suggestionCard p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.empty,
+.emptyDetail {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.emptyDetail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+@media (max-width: 920px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+  .iceBar {
+    grid-template-columns: 1fr;
+  }
+  .iceScoreBox {
+    text-align: left;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 0.5rem;
+  }
+}
