@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cerebro
+  title: Cerebro
+  description: Offline-capable PWA for personal knowledge management, arXiv/URL clipping, interactive topic mind maps, and AI idea incubation.
+  annotations:
+    github.com/project-slug: K-J-Web-Designs/Cerebro
+  tags:
+    - pwa
+    - research
+    - typescript
+    - nextjs
+    - react
+    - supabase
+    - postgres
+    - docker
+  links:
+    - url: https://github.com/K-J-Web-Designs/Cerebro
+      title: GitHub Repository
+      icon: github
+spec:
+  type: pwa
+  lifecycle: experimental
+  owner: user:default/kris
+  system: ai-ventures
