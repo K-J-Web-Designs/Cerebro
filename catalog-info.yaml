@@ -24,3 +24,35 @@ spec:
   lifecycle: experimental
   owner: user:default/kris
   system: ai-ventures
+  providesApis:
+    - cerebro-sync-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: cerebro-sync-api
+  title: Cerebro Next.js API
+  description: Next.js API routes for offline-first IndexedDB delta sync and service health.
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: user:default/kris
+  system: ai-ventures
+  definition: |
+    openapi: "3.0.0"
+    info:
+      title: Cerebro API
+      version: "0.1.0"
+    paths:
+      /api/health:
+        get:
+          summary: Health check endpoint
+          responses:
+            "200":
+              description: Healthy
+      /api/sync:
+        post:
+          summary: Delta sync between IndexedDB and PostgreSQL/Supabase
+          responses:
+            "200":
+              description: Synchronized delta payload
