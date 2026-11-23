@@ -6,6 +6,7 @@ metadata:
   description: Offline-capable PWA for personal knowledge management, arXiv/URL clipping, interactive topic mind maps, and AI idea incubation.
   annotations:
     github.com/project-slug: K-J-Web-Designs/Cerebro
+    backstage.io/techdocs-ref: dir:.
   tags:
     - pwa
     - research
