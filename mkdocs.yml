@@ -1,0 +1,5 @@
+site_name: Cerebro
+nav:
+  - Overview: index.md
+plugins:
+  - techdocs-core
